@@ -3,7 +3,7 @@ package com.cwy.service.impl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.cwy.mapper.PrivateWordMapper;
-import com.cwy.model.PrivateWord;
+import com.cwy.dao.model.PrivateWord;
 import com.cwy.service.PrivateWordService;
 import com.cwy.service.UserService;
 import com.cwy.utils.TimeUtil;

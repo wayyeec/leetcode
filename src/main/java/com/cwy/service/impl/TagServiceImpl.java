@@ -1,7 +1,7 @@
 package com.cwy.service.impl;
 
 import com.cwy.mapper.TagMapper;
-import com.cwy.model.Tag;
+import com.cwy.dao.model.Tag;
 import com.cwy.service.TagService;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;

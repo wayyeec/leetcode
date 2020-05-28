@@ -1,6 +1,6 @@
 package com.cwy.service;
 
-import com.cwy.model.LeaveMessage;
+import com.cwy.dao.model.LeaveMessage;
 import net.sf.json.JSONObject;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

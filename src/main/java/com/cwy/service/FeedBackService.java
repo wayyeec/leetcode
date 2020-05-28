@@ -1,6 +1,6 @@
 package com.cwy.service;
 
-import com.cwy.model.FeedBack;
+import com.cwy.dao.model.FeedBack;
 import net.sf.json.JSONObject;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

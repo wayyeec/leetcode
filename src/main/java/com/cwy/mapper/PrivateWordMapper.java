@@ -1,6 +1,6 @@
 package com.cwy.mapper;
 
-import com.cwy.model.PrivateWord;
+import com.cwy.dao.model.PrivateWord;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 

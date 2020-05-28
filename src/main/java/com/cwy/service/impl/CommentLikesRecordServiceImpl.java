@@ -1,7 +1,7 @@
 package com.cwy.service.impl;
 
 import com.cwy.mapper.CommentLikesMapper;
-import com.cwy.model.CommentLikesRecord;
+import com.cwy.dao.model.CommentLikesRecord;
 import com.cwy.service.CommentLikesRecordService;
 import com.cwy.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

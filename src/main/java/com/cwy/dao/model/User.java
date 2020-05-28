@@ -1,4 +1,4 @@
-package com.cwy.model;
+package com.cwy.dao.model;
 
 import lombok.Data;
 
@@ -10,7 +10,7 @@ import java.util.List;
  * Describe: 用户实体类
  */
 @Data
-public class User {
+public class User{
 
     private int id;
 

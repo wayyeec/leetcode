@@ -1,8 +1,8 @@
 package com.cwy.controller;
 
 import com.cwy.component.JavaScriptCheck;
-import com.cwy.model.LeaveMessage;
-import com.cwy.model.LeaveMessageLikesRecord;
+import com.cwy.dao.model.LeaveMessage;
+import com.cwy.dao.model.LeaveMessageLikesRecord;
 import com.cwy.service.LeaveMessageLikesRecordService;
 import com.cwy.service.LeaveMessageService;
 import com.cwy.service.UserService;

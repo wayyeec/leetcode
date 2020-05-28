@@ -1,6 +1,6 @@
 package com.cwy.service;
 
-import com.cwy.model.LeaveMessageLikesRecord;
+import com.cwy.dao.model.LeaveMessageLikesRecord;
 import org.springframework.stereotype.Service;
 
 /**

@@ -1,7 +1,7 @@
 package com.cwy.controller;
 
 
-import com.cwy.model.User;
+import com.cwy.dao.model.User;
 import com.cwy.service.UserService;
 import com.cwy.utils.MD5Util;
 import org.springframework.beans.factory.annotation.Autowired;

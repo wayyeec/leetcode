@@ -1,6 +1,6 @@
 package com.cwy.service;
 
-import com.cwy.model.Comment;
+import com.cwy.dao.model.Comment;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.springframework.stereotype.Service;

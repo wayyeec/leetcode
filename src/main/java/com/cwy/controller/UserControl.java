@@ -1,6 +1,6 @@
 package com.cwy.controller;
 
-import com.cwy.model.User;
+import com.cwy.dao.model.User;
 import com.cwy.service.CommentService;
 import com.cwy.service.LeaveMessageService;
 import com.cwy.service.PrivateWordService;

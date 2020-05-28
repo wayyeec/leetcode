@@ -1,4 +1,4 @@
-package com.cwy.model;
+package com.cwy.dao.model;
 
 import lombok.Data;
 

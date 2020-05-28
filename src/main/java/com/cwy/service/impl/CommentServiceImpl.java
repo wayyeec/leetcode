@@ -3,7 +3,7 @@ package com.cwy.service.impl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.cwy.mapper.CommentMapper;
-import com.cwy.model.Comment;
+import com.cwy.dao.model.Comment;
 import com.cwy.service.ArticleService;
 import com.cwy.service.CommentLikesRecordService;
 import com.cwy.service.CommentService;

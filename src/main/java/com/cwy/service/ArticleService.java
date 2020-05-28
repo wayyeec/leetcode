@@ -1,6 +1,6 @@
 package com.cwy.service;
 
-import com.cwy.model.Article;
+import com.cwy.dao.model.Article;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import org.springframework.stereotype.Service;

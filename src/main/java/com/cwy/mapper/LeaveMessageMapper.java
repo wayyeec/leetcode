@@ -1,6 +1,6 @@
 package com.cwy.mapper;
 
-import com.cwy.model.LeaveMessage;
+import com.cwy.dao.model.LeaveMessage;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 

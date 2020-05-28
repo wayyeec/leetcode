@@ -1,6 +1,6 @@
 package com.cwy.mapper;
 
-import com.cwy.model.Tag;
+import com.cwy.dao.model.Tag;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;

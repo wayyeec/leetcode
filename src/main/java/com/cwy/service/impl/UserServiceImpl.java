@@ -2,7 +2,7 @@ package com.cwy.service.impl;
 
 import com.cwy.constant.RoleConstant;
 import com.cwy.mapper.UserMapper;
-import com.cwy.model.User;
+import com.cwy.dao.model.User;
 import com.cwy.service.UserService;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;

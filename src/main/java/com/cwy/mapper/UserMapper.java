@@ -1,6 +1,6 @@
 package com.cwy.mapper;
 
-import com.cwy.model.User;
+import com.cwy.dao.model.User;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 

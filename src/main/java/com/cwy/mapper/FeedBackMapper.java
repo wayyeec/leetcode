@@ -1,6 +1,6 @@
 package com.cwy.mapper;
 
-import com.cwy.model.FeedBack;
+import com.cwy.dao.model.FeedBack;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;

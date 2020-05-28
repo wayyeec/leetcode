@@ -3,7 +3,7 @@ package com.cwy.service.impl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.cwy.mapper.FeedBackMapper;
-import com.cwy.model.FeedBack;
+import com.cwy.dao.model.FeedBack;
 import com.cwy.service.FeedBackService;
 import com.cwy.service.UserService;
 import com.cwy.utils.TimeUtil;

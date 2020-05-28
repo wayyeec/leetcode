@@ -1,7 +1,8 @@
 package com.cwy.service.security;
 
-import com.cwy.model.Role;
-import com.cwy.model.User;
+import com.cwy.dao.mapper.impl.UserMapperImpl;
+import com.cwy.dao.model.Role;
+import com.cwy.dao.model.User;
 import com.cwy.repository.mybatis.UserRepository;
 import com.cwy.service.UserService;
 import com.cwy.utils.TimeUtil;
@@ -24,14 +25,14 @@ import java.util.List;
 public class CustomUserServiceImpl implements UserDetailsService{
 
     @Autowired
-    UserRepository userRepository;
+    UserMapperImpl userMapper;
     @Autowired
     UserService userService;
 
     @Override
     public UserDetails loadUserByUsername(String phone) throws UsernameNotFoundException {
 
-        User user = userRepository.findByPhone(phone);
+        User user = userMapper.findByPhone(phone);
 
         if(user == null){
             throw  new UsernameNotFoundException("用户不存在");

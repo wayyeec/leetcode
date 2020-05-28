@@ -1,7 +1,7 @@
 package com.cwy.controller;
 
 import com.cwy.component.StringAndArray;
-import com.cwy.model.Article;
+import com.cwy.dao.model.Article;
 import com.cwy.service.ArticleService;
 import com.cwy.service.CategoryService;
 import com.cwy.service.TagService;

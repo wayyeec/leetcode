@@ -5,7 +5,7 @@ import com.github.pagehelper.PageInfo;
 import com.cwy.component.JavaScriptCheck;
 import com.cwy.constant.SiteOwner;
 import com.cwy.mapper.LeaveMessageMapper;
-import com.cwy.model.LeaveMessage;
+import com.cwy.dao.model.LeaveMessage;
 import com.cwy.service.LeaveMessageLikesRecordService;
 import com.cwy.service.LeaveMessageService;
 import com.cwy.service.UserService;

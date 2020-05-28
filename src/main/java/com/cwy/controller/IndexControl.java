@@ -1,6 +1,6 @@
 package com.cwy.controller;
 
-import com.cwy.model.FeedBack;
+import com.cwy.dao.model.FeedBack;
 import com.cwy.service.*;
 import com.cwy.utils.TransCodingUtil;
 import net.sf.json.JSONArray;

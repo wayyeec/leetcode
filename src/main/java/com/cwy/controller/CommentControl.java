@@ -2,8 +2,8 @@ package com.cwy.controller;
 
 import com.cwy.component.JavaScriptCheck;
 import com.cwy.constant.SiteOwner;
-import com.cwy.model.Comment;
-import com.cwy.model.CommentLikesRecord;
+import com.cwy.dao.model.Comment;
+import com.cwy.dao.model.CommentLikesRecord;
 import com.cwy.service.CommentLikesRecordService;
 import com.cwy.service.CommentService;
 import com.cwy.service.UserService;

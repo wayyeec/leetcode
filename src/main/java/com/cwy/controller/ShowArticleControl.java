@@ -1,6 +1,6 @@
 package com.cwy.controller;
 
-import com.cwy.model.ArticleLikesRecord;
+import com.cwy.dao.model.ArticleLikesRecord;
 import com.cwy.service.ArticleLikesRecordService;
 import com.cwy.service.ArticleService;
 import com.cwy.service.UserService;

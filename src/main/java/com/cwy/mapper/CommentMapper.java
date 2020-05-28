@@ -1,6 +1,6 @@
 package com.cwy.mapper;
 
-import com.cwy.model.Comment;
+import com.cwy.dao.model.Comment;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 

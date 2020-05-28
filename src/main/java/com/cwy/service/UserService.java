@@ -1,6 +1,6 @@
 package com.cwy.service;
 
-import com.cwy.model.User;
+import com.cwy.dao.model.User;
 import net.sf.json.JSONObject;
 import org.springframework.transaction.annotation.Transactional;
 

@@ -4,7 +4,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.cwy.component.StringAndArray;
 import com.cwy.mapper.ArticleMapper;
-import com.cwy.model.Article;
+import com.cwy.dao.model.Article;
 import com.cwy.service.*;
 import com.cwy.utils.TimeUtil;
 import net.sf.json.JSONArray;

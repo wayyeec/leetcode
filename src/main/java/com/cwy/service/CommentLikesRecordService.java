@@ -1,6 +1,6 @@
 package com.cwy.service;
 
-import com.cwy.model.CommentLikesRecord;
+import com.cwy.dao.model.CommentLikesRecord;
 import org.springframework.stereotype.Service;
 
 /**

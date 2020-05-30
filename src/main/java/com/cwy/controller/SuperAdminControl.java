@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.security.Principal;
 
 /**
- * @author: zhangocean
- * @Date: 2018/7/25 16:14
+ * @author: wayyee
+ * @Date: 2020/7/25 16:14
  * Describe: 超级管理页面
  */
 @RestController

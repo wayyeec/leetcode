@@ -1,4 +1,4 @@
-package com.cwy.mapper;
+package com.cwy.dao.mapper;
 
 import com.cwy.dao.model.FeedBack;
 import org.apache.ibatis.annotations.Insert;
@@ -9,8 +9,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /**
- * @author: zhangocean
- * @Date: 2018/7/23 17:22
+ * @author: wayyee
+ * @Date: 2020/7/23 17:22
  * Describe: 反馈sql
  */
 @Mapper

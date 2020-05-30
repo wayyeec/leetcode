@@ -1,4 +1,4 @@
-package com.cwy.repository.redis;
+package com.cwy.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -8,8 +8,8 @@ import org.springframework.stereotype.Repository;
 import javax.annotation.Resource;
 
 /**
- * @author: zhangocean
- * @Date: 2018/7/13 11:07
+ * @author: wayyee
+ * @Date: 2020/7/13 11:07
  * Describe:
  */
 @Repository

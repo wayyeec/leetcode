@@ -1,4 +1,4 @@
-package com.cwy.mapper;
+package com.cwy.dao.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /**
- * @author: zhangocean
- * @Date: 2018/7/17 20:54
+ * @author: wayyee
+ * @Date: 2020/7/17 20:54
  * Describe: 分类sql
  */
 @Mapper

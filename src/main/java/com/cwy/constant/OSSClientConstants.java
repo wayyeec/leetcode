@@ -1,8 +1,8 @@
 package com.cwy.constant;
 
 /**
- * @author: zhangocean
- * @Date: 2018/6/9 19:45
+ * @author: wayyee
+ * @Date: 2020/6/9 19:45
  * Describe: 阿里云连接密钥
  */
 public class OSSClientConstants {

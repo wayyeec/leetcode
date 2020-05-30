@@ -1,6 +1,6 @@
 package com.cwy.controller;
 
-import com.cwy.dao.model.User;
+import com.cwy.dao.po.User;
 import com.cwy.service.CommentService;
 import com.cwy.service.LeaveMessageService;
 import com.cwy.service.PrivateWordService;
@@ -22,8 +22,8 @@ import java.io.File;
 import java.security.Principal;
 
 /**
- * @author: zhangocean
- * @Date: 2018/7/20 20:56
+ * @author: wayyee
+ * @Date: 2020/7/20 20:56
  * Describe:
  */
 @RestController

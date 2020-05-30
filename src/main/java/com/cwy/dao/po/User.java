@@ -21,9 +21,11 @@ public class User {
 
     private String recentlylanded;
 
+    private String role;
+
     private String avatarimgurl;
 
-    public User(Integer id, String phone, String username, String password, String gender, String truename, String birthday, String email, String personalbrief, String recentlylanded, String avatarimgurl) {
+    public User(Integer id, String phone, String username, String password, String gender, String truename, String birthday, String email, String personalbrief, String recentlylanded, String role, String avatarimgurl) {
         this.id = id;
         this.phone = phone;
         this.username = username;
@@ -34,6 +36,7 @@ public class User {
         this.email = email;
         this.personalbrief = personalbrief;
         this.recentlylanded = recentlylanded;
+        this.role = role;
         this.avatarimgurl = avatarimgurl;
     }
 
@@ -119,6 +122,14 @@ public class User {
 
     public void setRecentlylanded(String recentlylanded) {
         this.recentlylanded = recentlylanded == null ? null : recentlylanded.trim();
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role == null ? null : role.trim();
     }
 
     public String getAvatarimgurl() {

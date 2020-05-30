@@ -20,8 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.security.Principal;
 
 /**
- * @author: zhangocean
- * @Date: 2018/7/15 13:55
+ * @author: wayyee
+ * @Date: 2020/7/15 13:55
  * Describe:
  */
 @RestController

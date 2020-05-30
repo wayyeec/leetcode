@@ -11,8 +11,8 @@ import javax.sql.DataSource;
 import java.io.IOException;
 
 /**
- * @author: zhangocean
- * @Date: 2018/6/5 19:23
+ * @author: wayyee
+ * @Date: 2020/6/5 19:23
  * Describe: 配置与连接池的会话
  */
 @Configuration
@@ -27,7 +27,7 @@ public class MyBatisConfig {
         SqlSessionFactoryBean sqlSessionFactory = new SqlSessionFactoryBean();
 
         sqlSessionFactory.setDataSource(dataSource);
-        sqlSessionFactory.setMapperLocations(applicationContext.getResources("classpath*:mapper/*.xml"));
+        sqlSessionFactory.setMapperLocations(applicationContext.getResources("classpath*:dao/mapper/*.xml"));
 
         //别名注册器
         TypeAliasRegistry typeAliasRegistry = new TypeAliasRegistry();

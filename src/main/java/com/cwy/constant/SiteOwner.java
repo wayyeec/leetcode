@@ -1,8 +1,8 @@
 package com.cwy.constant;
 
 /**
- * @author: zhangocean
- * @Date: 2018/7/27 14:27
+ * @author: wayyee
+ * @Date: 2020/7/27 14:27
  * Describe: 文章信息
  */
 public interface SiteOwner {

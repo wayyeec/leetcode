@@ -1,4 +1,4 @@
-package com.cwy.mapper;
+package com.cwy.dao.mapper;
 
 import com.cwy.dao.model.Tag;
 import org.apache.ibatis.annotations.Insert;
@@ -10,8 +10,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /**
- * @author: zhangocean
- * @Date: 2018/7/16 19:51
+ * @author: wayyee
+ * @Date: 2020/7/16 19:51
  * Describe: 标签sql
  */
 @Mapper

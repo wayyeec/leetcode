@@ -1,6 +1,6 @@
 package com.cwy.service.impl;
 
-import com.cwy.mapper.CategoryMapper;
+import com.cwy.dao.mapper.CategoryMapper;
 import com.cwy.service.ArticleService;
 import com.cwy.service.CategoryService;
 import net.sf.json.JSONArray;
@@ -11,8 +11,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * @author: zhangocean
- * @Date: 2018/7/17 20:54
+ * @author: wayyee
+ * @Date: 2020/7/17 20:54
  * Describe:
  */
 @Service

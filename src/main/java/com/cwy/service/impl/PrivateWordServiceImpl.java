@@ -2,7 +2,7 @@ package com.cwy.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.cwy.mapper.PrivateWordMapper;
+import com.cwy.dao.mapper.PrivateWordMapper;
 import com.cwy.dao.model.PrivateWord;
 import com.cwy.service.PrivateWordService;
 import com.cwy.service.UserService;
@@ -16,8 +16,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author: zhangocean
- * @Date: 2018/7/22 20:21
+ * @author: wayyee
+ * @Date: 2020/7/22 20:21
  * Describe:
  */
 @Service

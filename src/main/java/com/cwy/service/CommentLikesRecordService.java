@@ -4,8 +4,8 @@ import com.cwy.dao.model.CommentLikesRecord;
 import org.springframework.stereotype.Service;
 
 /**
- * @author: zhangocean
- * @Date: 2018/7/12 13:47
+ * @author: wayyee
+ * @Date: 2020/7/12 13:47
  * Describe:评论点赞记录业务操作
  */
 @Service

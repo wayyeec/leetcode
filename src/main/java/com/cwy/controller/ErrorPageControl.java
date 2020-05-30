@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * @author: zhangocean
- * @Date: 2018/6/7 17:09
+ * @author: wayyee
+ * @Date: 2020/6/7 17:09
  * Describe: 错误页面跳转
  */
 @Controller

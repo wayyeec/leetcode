@@ -3,7 +3,7 @@ package com.cwy.service.impl;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.cwy.component.StringAndArray;
-import com.cwy.mapper.ArticleMapper;
+import com.cwy.dao.mapper.ArticleMapper;
 import com.cwy.dao.model.Article;
 import com.cwy.service.*;
 import com.cwy.utils.TimeUtil;
@@ -20,8 +20,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @author: zhangocean
- * @Date: 2018/6/20 21:42
+ * @author: wayyee
+ * @Date: 2020/6/20 21:42
  * Describe:
  */
 @Service

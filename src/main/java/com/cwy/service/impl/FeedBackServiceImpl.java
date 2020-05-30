@@ -2,7 +2,7 @@ package com.cwy.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.cwy.mapper.FeedBackMapper;
+import com.cwy.dao.mapper.FeedBackMapper;
 import com.cwy.dao.model.FeedBack;
 import com.cwy.service.FeedBackService;
 import com.cwy.service.UserService;
@@ -15,8 +15,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * @author: zhangocean
- * @Date: 2018/7/23 17:21
+ * @author: wayyee
+ * @Date: 2020/7/23 17:21
  * Describe:
  */
 @Service

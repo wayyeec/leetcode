@@ -20,8 +20,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.security.Principal;
 
 /**
- * @author: zhangocean
- * @Date: 2018/7/5 16:21
+ * @author: wayyee
+ * @Date: 2020/7/5 16:21
  * Describe: 文章显示页面
  */
 @Controller

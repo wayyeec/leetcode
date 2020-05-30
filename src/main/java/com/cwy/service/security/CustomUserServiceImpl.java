@@ -1,11 +1,10 @@
 package com.cwy.service.security;
 
 import com.cwy.dao.mapper.impl.UserMapperImpl;
-import com.cwy.dao.model.Role;
-import com.cwy.dao.model.User;
-import com.cwy.repository.mybatis.UserRepository;
+import com.cwy.dao.po.User;
 import com.cwy.service.UserService;
 import com.cwy.utils.TimeUtil;
+import com.cwy.utils.enums.RoleEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -17,8 +16,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author: zhangocean
- * @Date: 2018/6/5 19:11
+ * @author: wayyee
+ * @Date: 2020/6/5 19:11
  * Describe: 用户登录处理
  */
 @Service
@@ -31,21 +30,20 @@ public class CustomUserServiceImpl implements UserDetailsService{
 
     @Override
     public UserDetails loadUserByUsername(String phone) throws UsernameNotFoundException {
+        User user = new User();
+        user.setPhone(phone);
+        User userUpd = userMapper.findUserByParam(user);
 
-        User user = userMapper.findByPhone(phone);
-
-        if(user == null){
+        if(userUpd == null){
             throw  new UsernameNotFoundException("用户不存在");
         }
 
-        TimeUtil timeUtil = new TimeUtil();
-        String recentlyLanded = timeUtil.getFormatDateForSix();
-        userService.updateRecentlyLanded(user.getUsername(), recentlyLanded);
+        userUpd.setRecentlylanded(TimeUtil.getFormatDateForSix());
+        userMapper.updateByPrimaryKeySelective(userUpd);
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
 
-        for(Role role : user.getRoles()){
-            authorities.add(new SimpleGrantedAuthority(role.getName()));
-        }
+        authorities.add(new SimpleGrantedAuthority(RoleEnum.getDescByCode(userUpd.getRole())));
+
 
         return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), authorities);
     }

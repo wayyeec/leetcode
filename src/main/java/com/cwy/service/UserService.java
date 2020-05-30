@@ -1,12 +1,12 @@
 package com.cwy.service;
 
-import com.cwy.dao.model.User;
+import com.cwy.dao.po.User;
 import net.sf.json.JSONObject;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * @author: zhangocean
- * @Date: 2018/6/4 15:54
+ * @author: wayyee
+ * @Date: 2020/6/4 15:54
  * Describe: user业务操作
  */
 public interface UserService {
@@ -34,13 +34,6 @@ public interface UserService {
     String insert(User user);
 
     /**
-     * 通过手机号查找用户id
-     * @param phone 手机号
-     * @return 用户id
-     */
-    int findUserIdByPhone(String phone);
-
-    /**
      * 通过手机号修改密码
      * @param phone 手机号
      * @param password 密码
@@ -60,20 +53,6 @@ public interface UserService {
      * @return
      */
     int findIdByUsername(String username);
-
-    /**
-     * 通过手机号查找用户名
-     * @param phone 手机号
-     * @return 用户名
-     */
-    User findUsernameByPhone(String phone);
-
-    /**
-     * 更新最近登录时间
-     * @param username 用户名
-     * @param recentlyLanded 最近登录时间
-     */
-    void updateRecentlyLanded(String username, String recentlyLanded);
 
     /**
      * 判断用户名是否存在

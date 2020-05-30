@@ -1,4 +1,4 @@
-package com.cwy.mapper;
+package com.cwy.dao.mapper;
 
 import com.cwy.dao.model.PrivateWord;
 import org.apache.ibatis.annotations.*;
@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /**
- * @author: zhangocean
- * @Date: 2018/7/22 20:22
+ * @author: wayyee
+ * @Date: 2020/7/22 20:22
  * Describe: 悄悄话sql
  */
 @Mapper

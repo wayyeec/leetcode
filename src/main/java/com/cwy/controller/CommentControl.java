@@ -24,8 +24,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.security.Principal;
 
 /**
- * @author: zhangocean
- * @Date: 2018/7/5 23:14
+ * @author: wayyee
+ * @Date: 2020/7/5 23:14
  * Describe: 评论和回复
  */
 @Controller

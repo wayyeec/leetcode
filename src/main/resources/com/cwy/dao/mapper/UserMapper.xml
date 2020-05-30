@@ -13,6 +13,7 @@
       <arg column="email" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="personalBrief" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="recentlyLanded" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="role" javaType="java.lang.String" jdbcType="VARCHAR" />
     </constructor>
   </resultMap>
   <resultMap id="ResultMapWithBLOBs" type="com.cwy.dao.po.User">
@@ -27,12 +28,13 @@
       <arg column="email" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="personalBrief" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="recentlyLanded" javaType="java.lang.String" jdbcType="VARCHAR" />
+      <arg column="role" javaType="java.lang.String" jdbcType="VARCHAR" />
       <arg column="avatarImgUrl" javaType="java.lang.String" jdbcType="LONGVARCHAR" />
     </constructor>
   </resultMap>
   <sql id="Base_Column_List">
     id, phone, username, password, gender, trueName, birthday, email, personalBrief,
-    recentlyLanded
+    recentlyLanded, role
   </sql>
   <sql id="Blob_Column_List">
     avatarImgUrl
@@ -53,11 +55,13 @@
     insert into user (id, phone, username,
       password, gender, trueName,
       birthday, email, personalBrief,
-      recentlyLanded, avatarImgUrl)
+      recentlyLanded, role, avatarImgUrl
+      )
     values (#{id,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR},
       #{password,jdbcType=VARCHAR}, #{gender,jdbcType=CHAR}, #{truename,jdbcType=VARCHAR},
       #{birthday,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{personalbrief,jdbcType=VARCHAR},
-      #{recentlylanded,jdbcType=VARCHAR}, #{avatarimgurl,jdbcType=LONGVARCHAR})
+      #{recentlylanded,jdbcType=VARCHAR}, #{role,jdbcType=VARCHAR}, #{avatarimgurl,jdbcType=LONGVARCHAR}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.cwy.dao.po.User">
     insert into user
@@ -91,6 +95,9 @@
       </if>
       <if test="recentlylanded != null">
         recentlyLanded,
+      </if>
+      <if test="role != null">
+        role,
       </if>
       <if test="avatarimgurl != null">
         avatarImgUrl,
@@ -127,6 +134,9 @@
       <if test="recentlylanded != null">
         #{recentlylanded,jdbcType=VARCHAR},
       </if>
+      <if test="role != null">
+        #{role,jdbcType=VARCHAR},
+      </if>
       <if test="avatarimgurl != null">
         #{avatarimgurl,jdbcType=LONGVARCHAR},
       </if>
@@ -162,6 +172,9 @@
       <if test="recentlylanded != null">
         recentlyLanded = #{recentlylanded,jdbcType=VARCHAR},
       </if>
+      <if test="role != null">
+        role = #{role,jdbcType=VARCHAR},
+      </if>
       <if test="avatarimgurl != null">
         avatarImgUrl = #{avatarimgurl,jdbcType=LONGVARCHAR},
       </if>
@@ -179,6 +192,7 @@
       email = #{email,jdbcType=VARCHAR},
       personalBrief = #{personalbrief,jdbcType=VARCHAR},
       recentlyLanded = #{recentlylanded,jdbcType=VARCHAR},
+      role = #{role,jdbcType=VARCHAR},
       avatarImgUrl = #{avatarimgurl,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -192,7 +206,8 @@
       birthday = #{birthday,jdbcType=VARCHAR},
       email = #{email,jdbcType=VARCHAR},
       personalBrief = #{personalbrief,jdbcType=VARCHAR},
-      recentlyLanded = #{recentlylanded,jdbcType=VARCHAR}
+      recentlyLanded = #{recentlylanded,jdbcType=VARCHAR},
+      role = #{role,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

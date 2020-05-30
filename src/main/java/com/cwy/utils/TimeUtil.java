@@ -6,8 +6,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 /**
- * @author: zhangocean
- * @Date: 2018/6/20 19:55
+ * @author: wayyee
+ * @Date: 2020/6/20 19:55
  * Describe: 时间工具
  */
 public class TimeUtil {
@@ -17,7 +17,7 @@ public class TimeUtil {
      * 使用线程安全的DateTimeFormatter
      * @return “年-月-日”字符串
      */
-    public String getFormatDateForThree(){
+    public static String getFormatDateForThree(){
 
         LocalDateTime now = LocalDateTime.now();
         DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -29,7 +29,7 @@ public class TimeUtil {
      * 使用线程安全的DateTimeFormatter
      * @return “年-月-日 时:分:秒”字符串
      */
-    public String getFormatDateForSix(){
+    public static String getFormatDateForSix(){
         LocalDateTime now = LocalDateTime.now();
         DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         return now.format(format);
@@ -40,7 +40,7 @@ public class TimeUtil {
      * 使用线程安全的DateTimeFormatter
      * @return “年-月-日 时:分”字符串
      */
-    public String getFormatDateForFive(){
+    public static String getFormatDateForFive(){
 
         LocalDateTime now = LocalDateTime.now();
         DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
@@ -49,20 +49,20 @@ public class TimeUtil {
 
     /**
      * 解析日期
-     * @param date 日期 2018-06-21
+     * @param date 日期 2020-06-21
      * @return
      */
-    public LocalDate getParseDateForThree(String date){
+    public static LocalDate getParseDateForThree(String date){
         DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         return LocalDate.parse(date, format);
     }
 
     /**
      * 解析日期
-     * @param date 日期 2018-06-21 12:01:25
+     * @param date 日期 2020-06-21 12:01:25
      * @return
      */
-    public LocalDate getParseDateForSix(String date){
+    public static LocalDate getParseDateForSix(String date){
         DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
         return LocalDate.parse(date, format);
     }
@@ -71,17 +71,17 @@ public class TimeUtil {
      * 获得当前时间的时间戳
      * @return 时间戳
      */
-    public long getLongTime(){
+    public static long getLongTime(){
         Date now = new Date();
         return now.getTime()/1000;
     }
 
     /**
      * 时间中横杆转换为年
-     * @param str 2018-08
-     * @return 2018年8月
+     * @param str 2020-08
+     * @return 2020年8月
      */
-    public String timeWhippletreeToYear(String str){
+    public static String timeWhippletreeToYear(String str){
         StringBuilder s = new StringBuilder();
         s.append(str.substring(0,4));
         s.append("年");
@@ -92,10 +92,10 @@ public class TimeUtil {
 
     /**
      * 时间中的年转换为横杠
-     * @param str 2018年07月
-     * @return 2018-07
+     * @param str 2020年07月
+     * @return 2020-07
      */
-    public String timeYearToWhippletree(String str){
+    public static String timeYearToWhippletree(String str){
         StringBuilder s = new StringBuilder();
         s.append(str.substring(0,4));
         s.append("-");

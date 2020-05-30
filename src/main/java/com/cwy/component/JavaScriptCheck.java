@@ -1,8 +1,8 @@
 package com.cwy.component;
 
 /**
- * @author: zhangocean
- * @Date: 2018/12/28 12:37
+ * @author: wayyee
+ * @Date: 2020/12/28 12:37
  * Describe:
  */
 public class JavaScriptCheck {

@@ -4,7 +4,7 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.cwy.component.JavaScriptCheck;
 import com.cwy.constant.SiteOwner;
-import com.cwy.mapper.LeaveMessageMapper;
+import com.cwy.dao.mapper.LeaveMessageMapper;
 import com.cwy.dao.model.LeaveMessage;
 import com.cwy.service.LeaveMessageLikesRecordService;
 import com.cwy.service.LeaveMessageService;
@@ -18,8 +18,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * @author: zhangocean
- * @Date: 2018/7/15 14:01
+ * @author: wayyee
+ * @Date: 2020/7/15 14:01
  * Describe:
  */
 @Service

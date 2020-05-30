@@ -1,14 +1,14 @@
 package com.cwy.service.impl;
 
-import com.cwy.mapper.LeaveMessageLikesRecordMapper;
+import com.cwy.dao.mapper.LeaveMessageLikesRecordMapper;
 import com.cwy.dao.model.LeaveMessageLikesRecord;
 import com.cwy.service.LeaveMessageLikesRecordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * @author: zhangocean
- * @Date: 2018/7/16 15:32
+ * @author: wayyee
+ * @Date: 2020/7/16 15:32
  * Describe:
  */
 @Service

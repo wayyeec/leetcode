@@ -1,6 +1,6 @@
 package com.cwy.service.impl;
 
-import com.cwy.mapper.CommentLikesMapper;
+import com.cwy.dao.mapper.CommentLikesMapper;
 import com.cwy.dao.model.CommentLikesRecord;
 import com.cwy.service.CommentLikesRecordService;
 import com.cwy.service.UserService;
@@ -8,8 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * @author: zhangocean
- * @Date: 2018/7/12 13:47
+ * @author: wayyee
+ * @Date: 2020/7/12 13:47
  * Describe:
  */
 @Service

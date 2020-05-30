@@ -3,8 +3,8 @@ package com.cwy.dao.model;
 import lombok.Data;
 
 /**
- * @author: zhangocean
- * @Date: 2018/7/5 22:37
+ * @author: wayyee
+ * @Date: 2020/7/5 22:37
  * Describe: 文章评论
  */
 @Data

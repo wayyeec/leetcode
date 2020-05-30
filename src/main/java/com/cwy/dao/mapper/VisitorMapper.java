@@ -1,11 +1,11 @@
-package com.cwy.mapper;
+package com.cwy.dao.mapper;
 
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
 /**
- * @author: zhangocean
- * @Date: 2018/6/16 16:22
+ * @author: wayyee
+ * @Date: 2020/6/16 16:22
  * Describe: 访客sql
  */
 @Mapper

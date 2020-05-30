@@ -2,7 +2,7 @@ package com.cwy.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.cwy.mapper.CommentMapper;
+import com.cwy.dao.mapper.CommentMapper;
 import com.cwy.dao.model.Comment;
 import com.cwy.service.ArticleService;
 import com.cwy.service.CommentLikesRecordService;
@@ -18,8 +18,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * @author: zhangocean
- * @Date: 2018/7/6 16:47
+ * @author: wayyee
+ * @Date: 2020/7/6 16:47
  * Describe:
  */
 @Service

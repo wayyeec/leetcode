@@ -1,8 +1,8 @@
 package com.cwy.exception;
 
 /**
- * @author: zhangocean
- * @Date: 2018/8/8 15:50
+ * @author: wayyee
+ * @Date: 2020/8/8 15:50
  * Describe:
  */
 public class MyException extends Exception {

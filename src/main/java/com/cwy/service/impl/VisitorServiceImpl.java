@@ -1,6 +1,6 @@
 package com.cwy.service.impl;
 
-import com.cwy.mapper.VisitorMapper;
+import com.cwy.dao.mapper.VisitorMapper;
 import com.cwy.service.VisitorService;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,8 +9,8 @@ import org.springframework.stereotype.Service;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * @author: zhangocean
- * @Date: 2018/6/16 16:21
+ * @author: wayyee
+ * @Date: 2020/6/16 16:21
  * Describe: 访客实现类
  */
 @Service

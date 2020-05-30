@@ -1,4 +1,4 @@
-package com.cwy.mapper;
+package com.cwy.dao.mapper;
 
 import com.cwy.dao.model.Article;
 import org.apache.ibatis.annotations.*;
@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /**
- * @author: zhangocean
- * @Date: 2018/6/20 21:36
+ * @author: wayyee
+ * @Date: 2020/6/20 21:36
  * Describe: 文章sql
  */
 @Mapper

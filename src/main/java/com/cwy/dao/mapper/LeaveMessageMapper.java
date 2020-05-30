@@ -1,4 +1,4 @@
-package com.cwy.mapper;
+package com.cwy.dao.mapper;
 
 import com.cwy.dao.model.LeaveMessage;
 import org.apache.ibatis.annotations.*;
@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 /**
- * @author: zhangocean
- * @Date: 2018/7/15 14:01
+ * @author: wayyee
+ * @Date: 2020/7/15 14:01
  * Describe: 留言sql
  */
 @Mapper

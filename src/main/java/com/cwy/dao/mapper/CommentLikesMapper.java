@@ -1,12 +1,12 @@
-package com.cwy.mapper;
+package com.cwy.dao.mapper;
 
 import com.cwy.dao.model.CommentLikesRecord;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
 
 /**
- * @author: zhangocean
- * @Date: 2018/7/12 13:48
+ * @author: wayyee
+ * @Date: 2020/7/12 13:48
  * Describe: 评论点赞sql
  */
 @Mapper

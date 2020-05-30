@@ -1,6 +1,7 @@
 package com.cwy.controller;
 
-import com.cwy.dao.model.User;
+
+import com.cwy.dao.po.User;
 import com.cwy.service.UserService;
 import com.cwy.utils.MD5Util;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,8 +13,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * @author: zhangocean
- * @Date: 2018/6/8 9:24
+ * @author: wayyee
+ * @Date: 2020/6/8 9:24
  * Describe: 登录控制
  */
 @Controller

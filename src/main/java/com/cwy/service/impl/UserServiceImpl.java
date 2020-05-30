@@ -1,10 +1,12 @@
 package com.cwy.service.impl;
 
 import com.cwy.constant.RoleConstant;
-import com.cwy.mapper.UserMapper;
-import com.cwy.dao.model.User;
+import com.cwy.dao.mapper.impl.UserMapperImpl;
+import com.cwy.dao.po.User;
 import com.cwy.service.UserService;
 import net.sf.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -12,24 +14,30 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * @author: zhangocean
- * @Date: 2018/6/4 15:56
+ * @author: wayyee
+ * @Date: 2020/03/01 15:56
  * Describe: user表接口具体业务逻辑
  */
 @Service
 public class UserServiceImpl implements UserService {
+    private final static Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
+    private static String infoHeader = "user表接口具体业务逻辑";
 
     @Autowired
-    UserMapper userMapper;
+    UserMapperImpl userMapper;
 
     @Override
     public User findUserByPhone(String phone) {
-        return userMapper.findUserByPhone(phone);
+        User user = new User();
+        user.setPhone(phone);
+        return userMapper.findUserByParam(user);
     }
 
     @Override
     public String findUsernameById(int id) {
-        return userMapper.findUsernameById(id);
+        User user = new User();
+        user.setId(id);
+        return userMapper.findUserByParam(user).getUsername();
     }
 
     @Override
@@ -38,20 +46,18 @@ public class UserServiceImpl implements UserService {
             return "1";
         }
         if("male".equals(user.getGender())){
-            user.setAvatarImgUrl("https://cwy-myblog.oss-cn-shenzhen.aliyuncs.com/public/user/avatar/noLogin_male.jpg");
+            user.setAvatarimgurl("male.jpg");
         } else {
-            user.setAvatarImgUrl("https://cwy-myblog.oss-cn-shenzhen.aliyuncs.com/public/user/avatar/noLogin_female.jpg");
+            user.setAvatarimgurl("female.jpg");
         }
         userMapper.insert(user);
-        int userId = userMapper.findUserIdByPhone(user.getPhone());
+
+        int userId = userMapper.findUserByParam(user).getId();
         insertRole(userId, RoleConstant.ROLE_USER);
         return "2";
     }
 
-    @Override
-    public int findUserIdByPhone(String phone) {
-        return 0;
-    }
+
 
     @Override
     public void updatePasswordByPhone(String phone, String password) {
@@ -60,34 +66,30 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String findPhoneByUsername(String username) {
-        return userMapper.findPhoneByUsername(username);
+        User user = new User();
+        user.setUsername(username);
+        return userMapper.findUserByParam(user).getPhone();
     }
 
     @Override
     public int findIdByUsername(String username) {
-        return userMapper.findIdByUsername(username);
-    }
-
-    @Override
-    public User findUsernameByPhone(String phone) {
-        return userMapper.findUsernameByPhone(phone);
-    }
-
-    @Override
-    public void updateRecentlyLanded(String username, String recentlyLanded) {
-        String phone = userMapper.findPhoneByUsername(username);
-        userMapper.updateRecentlyLanded(phone, recentlyLanded);
+        User user = new User();
+        user.setUsername(username);
+        return userMapper.findUserByParam(user).getId();
     }
 
     @Override
     public boolean usernameIsExit(String username) {
-        User user = userMapper.findUsernameByUsername(username);
-        return user != null;
+        User user = new User();
+        user.setUsername(username);
+        return userMapper.findUserByParam(user) != null;
     }
 
     @Override
     public boolean isSuperAdmin(String phone) {
-        int userId = userMapper.findUserIdByPhone(phone);
+        User user = new User();
+        user.setPhone(phone);
+        int userId = userMapper.findUserByParam(user).getId();
         List<Object> roleIds = userMapper.findRoleIdByUserId(userId);
 
         for(Object i : roleIds){
@@ -123,11 +125,11 @@ public class UserServiceImpl implements UserService {
         userJon.put("phone",user.getPhone());
         userJon.put("username",user.getUsername());
         userJon.put("gender",user.getGender());
-        userJon.put("trueName",user.getTrueName());
+        userJon.put("trueName",user.getTruename());
         userJon.put("birthday",user.getBirthday());
         userJon.put("email",user.getEmail());
-        userJon.put("personalBrief",user.getPersonalBrief());
-        userJon.put("avatarImgUrl",user.getAvatarImgUrl());
+        userJon.put("personalBrief",user.getPersonalbrief());
+        userJon.put("avatarImgUrl",user.getAvatarimgurl());
         jsonObject.put("result",userJon);
         return jsonObject;
     }
@@ -181,7 +183,7 @@ public class UserServiceImpl implements UserService {
      * @return true--存在  false--不存在
      */
     private boolean userIsExit(String phone){
-        User user = userMapper.findUserByPhone(phone);
+        User user = this.findUserByPhone(phone);
         return user != null;
     }
 }

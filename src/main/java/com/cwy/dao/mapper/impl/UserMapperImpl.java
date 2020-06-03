@@ -14,13 +14,6 @@ public interface UserMapperImpl extends UserMapper {
 
     User findUserByParam(User user);
 
-    /**
-     *  通过手机号查找用户
-     * @param phone 手机号
-     * @return 用户
-     */
-    UserDao findByPhone(String phone);
-
     @Insert("insert into user_role(User_id, Role_id) values (#{userId}, #{roleId})")
     void insertRole(@Param("userId") int userId, @Param("roleId") int roleId);
 

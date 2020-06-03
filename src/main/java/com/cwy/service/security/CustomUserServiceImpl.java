@@ -41,10 +41,12 @@ public class CustomUserServiceImpl implements UserDetailsService{
         userUpd.setRecentlylanded(TimeUtil.getFormatDateForSix());
         userMapper.updateByPrimaryKeySelective(userUpd);
         List<SimpleGrantedAuthority> authorities = new ArrayList<>();
+        String[] roles = userUpd.getRole().split(",");
+        for (String role:roles) {
+            authorities.add(new SimpleGrantedAuthority("ROLE_"+RoleEnum.getDescByCode(role)));
+        }
 
-        authorities.add(new SimpleGrantedAuthority(RoleEnum.getDescByCode(userUpd.getRole())));
 
-
-        return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(), authorities);
+        return new org.springframework.security.core.userdetails.User(userUpd.getUsername(), userUpd.getPassword(), authorities);
     }
 }

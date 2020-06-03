@@ -27,7 +27,7 @@ public class MyBatisConfig {
         SqlSessionFactoryBean sqlSessionFactory = new SqlSessionFactoryBean();
 
         sqlSessionFactory.setDataSource(dataSource);
-        sqlSessionFactory.setMapperLocations(applicationContext.getResources("classpath*:dao/mapper/*.xml"));
+        //sqlSessionFactory.setMapperLocations(applicationContext.getResources("classpath*:dao/mapper/*"));
 
         //别名注册器
         TypeAliasRegistry typeAliasRegistry = new TypeAliasRegistry();

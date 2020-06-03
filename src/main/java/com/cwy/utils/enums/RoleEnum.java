@@ -6,9 +6,9 @@ package com.cwy.utils.enums;
  * @date 2020-05-30 19:14
  */
 public enum RoleEnum {
-    USER("1","USER"),
+    USER("3","USER"),
     ADMIN("2","ADMIN"),
-    SUPERADMIN("3","SUPERASMIN");
+    SUPERADMIN("1","SUPERADMIN");
 
     private String code;
     private String desc;
@@ -36,10 +36,10 @@ public enum RoleEnum {
 
     public static String getDescByCode(String code){
         for (RoleEnum e:RoleEnum.values()) {
-            if(e.code==code){
+            if(e.code.equals(code)){
                 return e.desc;
             }
         }
-        return "未知";
+        return USER.desc;
     }
 }

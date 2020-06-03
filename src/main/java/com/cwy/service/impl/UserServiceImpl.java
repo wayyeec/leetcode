@@ -89,13 +89,9 @@ public class UserServiceImpl implements UserService {
     public boolean isSuperAdmin(String phone) {
         User user = new User();
         user.setPhone(phone);
-        int userId = userMapper.findUserByParam(user).getId();
-        List<Object> roleIds = userMapper.findRoleIdByUserId(userId);
-
-        for(Object i : roleIds){
-            if((int)i == 3){
-                return true;
-            }
+        String role = userMapper.findUserByParam(user).getRole();
+        if(role.contains("3")){
+            return true;
         }
         return false;
     }

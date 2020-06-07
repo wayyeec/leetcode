@@ -21,55 +21,6 @@
     <script src="https://cdn.bootcss.com/amazeui/2.7.2/js/amazeui.min.js"></script>
 </head>
 <body>
-
-<div class="header">
-    <div class="am-topbar" style="margin-bottom: 0">
-        <h1 class="am-topbar-brand">
-            <a href="/" class="blogTitleName"><img src="/img/mine/timo.jpg" class="imgStyle">程序猿</a>
-        </h1>
-        <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" style="background-color: #CCCCCC;border-color: white;border-radius: 6px" data-am-collapse="{target: '#doc-topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
-
-        <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
-            <ul class="am-nav am-nav-pills am-topbar-nav">
-                <li><a class="top_bar" href="/" style="cursor: pointer;"><span class="fa fa-home"></span>&nbsp;首页</a></li>
-                <li><a class="top_bar" href="/categories" style="cursor: pointer;"><span class="fa fa-th"></span>&nbsp;分类</a></li>
-                <li><a class="top_bar" href="/archives" style="cursor: pointer;"><span class="fa fa-archive"></span>&nbsp;归档</a></li>
-                <li><a class="top_bar" href="/tags" style="cursor: pointer;"><span class="fa fa-tags"></span>&nbsp;标签</a></li>
-                <li><a class="top_bar" href="/update" style="cursor: pointer;"><span class="fa fa-calendar-plus-o"></span>&nbsp;更新</a></li>
-                <li><a class="top_bar" href="/friendlylink" style="cursor: pointer;"><span class="fa fa-street-view"></span>&nbsp;友链</a></li>
-                <li><a class="top_bar" href="/aboutme" style="cursor: pointer;"><span class="fa fa-user"></span>&nbsp;关于我</a> </li>
-            </ul>
-
-            <div class="am-topbar-right" th:if="${#httpServletRequest.remoteUser}">
-                <div class="am-dropdown" data-am-dropdown="{boundary: '.am-topbar'}">
-                    <button class="personalSpace am-btn am-btn-secondary am-topbar-btn am-btn-sm am-dropdown-toggle" data-am-dropdown-toggle><span sec:authentication="name"></span> <span class="am-icon-caret-down"></span></button>
-                    <ul class="am-dropdown-content">
-                        <li><a href="/user" sec:authorize="hasRole('ROLE_USER')">个人主页</a></li>
-                        <li><a href="/superadmin" sec:authorize="hasRole('ROLE_SUPERADMIN')">网站后台管理</a></li>
-
-                        <li><a class="feedbackClick">反馈</a></li>
-                        <hr style="margin: 10px 0 5px 0;">
-                        <li><a th:href="@{/logout}">退出登录</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="am-topbar-right" th:unless="${#httpServletRequest.remoteUser}">
-                <a href="/register" class="am-btn am-btn-primary am-topbar-btn am-btn-sm" style="color: white">注册</a>
-            </div>
-            <div class="am-topbar-right" th:unless="${#httpServletRequest.remoteUser}">
-                <a href="/login" class="loginBtn am-btn am-btn-primary am-topbar-btn am-btn-sm" style="color: white">登录</a>
-            </div>
-            <div class="am-topbar-right writing am-hide-md-down">
-                <a  href="/editor" target="_blank" style="text-decoration: none">
-                    <img class="am-circle" src="/img/common/writing.jpg">
-                    <span class="write-word">写博客</span>
-                </a>
-            </div>
-
-        </div>
-    </div>
-</div>
-
 <div class="am-cf admin-main" style="padding-top: 0">
 
     <!--左侧-->
@@ -80,7 +31,6 @@
                 <li class="clickLi basicSetting"><a><i class="fa fa-cog fa-lg"></i> 安全设置</a></li>
 
                 <li class="clickLi leaveMessage"><a><i class="fa fa-commenting-o fa-lg"></i> 评论留言</a></li>
-                <li class="clickLi privateWord"><a><i class="fa fa-pencil-square-o fa-lg"></i> 悄悄话</a></li>
             </ul>
             <div class="am-panel am-panel-default admin-sidebar-panel">
                 <div class="am-panel-bd">
@@ -211,75 +161,6 @@
                         </div>
                     </div>
 
-            </div>
-            </div>
-            <div id="privateWord">
-                <div class="zhy-privateWord">
-                    <div class="zhangSay  am-animation-slide-top">
-                        <span class="word">生命中有一些人与我们擦肩了，却来不及遇见</span>
-                        <span class="word">遇见了，却来不及相识</span>
-                        <span class="word">相识了，却来不及熟悉</span>
-                        <span class="word">熟悉了，却还是要说再见...</span>
-                        <hr data-am-widget="divider" style="" class="am-divider am-divider-default" />
-                    </div>
-                    <div class="userSay  am-animation-slide-top">
-                        <div class="am-panel am-panel-danger">
-                            <div class="am-panel-hd">你一言，我一语</div>
-                            <textarea id="userSay" placeholder="说出你想对我说的话，让我慢慢回答给你听吧..."></textarea>
-                        </div>
-                        <button type="button" class="userSayBtn am-btn am-btn-warning am-round">Send</button>
-                    </div>
-                    <div class="yesterday  am-animation-slide-bottom">
-                        <h3>往昔</h3>
-                        <hr data-am-widget="divider" style="" class="am-divider am-divider-default" />
-                        <div class="yesterdayContent">
-                            <div class="noYesterday">
-                                你的曾今我好像未曾参与耶
-                            </div>
-                            <div class="says">
-                                <div class="say">
-                                    <div class="youSay">
-                                        <div class="youSayTime">
-                                            2020年7月20日
-                                        </div>
-                                        <div class="you">
-                                            <span>wayyee</span>：哈哈哈，你是傻子吧
-                                        </div>
-                                        <div class="me">
-                                            <span class="noReply">暂未收到回复</span>
-                                        </div>
-
-                                    </div>
-                                </div>
-                                <div class="say">
-                                    <div class="youSay">
-                                        <div class="youSayTime">
-                                            2020年7月20日
-                                        </div>
-                                        <div class="you">
-                                            <span>wayyee</span>：哈哈哈，你是傻子吧
-                                        </div>
-                                        <div class="me">
-                                            你才是傻子吧：张大仙
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="my-row" id="page-father">
-                                    <div id="pagination">
-                                        <ul class="am-pagination  am-pagination-centered">
-                                            <li class="am-disabled"><a href="#">&laquo; 上一页</a></li>
-                                            <li class="am-active"><a href="#">1</a></li>
-                                            <li><a href="#">2</a></li>
-                                            <li><a href="#">3</a></li>
-                                            <li><a href="#">4</a></li>
-                                            <li><a href="#">5</a></li>
-                                            <li><a href="#">下一页 &raquo;</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -293,26 +174,6 @@
     <div class="notice dangerNoticeAlert am-animation-slide-top">
         <span class="dangerNotice"></span>
     </div>
-</div>
-
-<div class="feedback am-animation-slide-top">
-    <a class="feedbackClose am-close am-close-alt am-close-spin am-icon-times"></a>
-    <div class="feedbackTitle">
-        反馈
-    </div>
-    <div class="feedbackWord">
-        您对于本博客网站有任何意见或是存在Bug的地方，欢迎进行反馈
-    </div>
-    <div class="feedbackForm">
-        <form class="am-form">
-            <fieldset class="am-form-set">
-                <textarea id="feedbackFormContent" placeholder="非常感谢您抽出时间填写问题反馈。必填"></textarea>
-                <input type="text" class="feedbackFormQQ" placeholder="方便留下QQ或是微信联系你吗。选填">
-            </fieldset>
-            <button type="button" class="feedbackFormBtn am-btn am-btn-primary am-btn-block">提交反馈</button>
-        </form>
-    </div>
-
 </div>
 
 <a href="#" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"></a>

@@ -13,10 +13,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-import org.apache.commons.io.FileUtils;
+//import org.apache.commons.io.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import net.coobird.thumbnailator.Thumbnails;
+//import net.coobird.thumbnailator.Thumbnails;
 
 /**
  * @author siawase
@@ -57,16 +57,16 @@ public class PicUtils {
                         float accuracy = desFileSize  / (float)(imageBytes.length/1024);
                         inputStream = new ByteArrayInputStream(imageBytes);
                         outputStream = new ByteArrayOutputStream(imageBytes.length);
-                        Thumbnails.of(inputStream)
-                                .scale(1f)
-                                .outputQuality(accuracy)
-                                .toOutputStream(outputStream);
+                        //Thumbnails.of(inputStream)
+                                //.scale(1f)
+                                //.outputQuality(accuracy)
+                                //.toOutputStream(outputStream);
                         imageBytes = outputStream.toByteArray();
                     }
 
-                    logger.info(LogUtil.infoHeader("").append("图片原大小:+"+imageBytes.length/1024+"kb | 压缩后大小="+imageBytes.length/1024+"kb").toString());
+                    logger.info("图片原大小:+"+imageBytes.length/1024+"kb | 压缩后大小="+imageBytes.length/1024+"kb");
                     f.delete();
-                    FileUtils.writeByteArrayToFile(new File(filePath), imageBytes);
+                    //FileUtils.writeByteArrayToFile(new File(filePath), imageBytes);
                 }
             } catch (Exception e) {
                 e.printStackTrace();

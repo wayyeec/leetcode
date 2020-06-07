@@ -2,10 +2,12 @@ package com.cwy.controller;
 
 import com.cwy.service.ArticleService;
 import com.cwy.utils.TransCodingUtil;
+import com.cwy.utils.enums.PageEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -29,18 +31,20 @@ public class BackControl {
 
 
     @RequestMapping("/")
-    public String index(HttpServletRequest request, HttpServletResponse response,
+    public String index(Model model,HttpServletRequest request, HttpServletResponse response,
                         @AuthenticationPrincipal Principal principal){
+
         String username = null;
+        model.addAttribute("pageEnum", PageEnum.FRAME.getCode());
         try {
             username = principal.getName();
         } catch (NullPointerException e){
             request.getSession().removeAttribute("lastUrl");
-            return "index";
+            return "frame";
         }
         response.setHeader("Access-Control-Allow-Origin", "*");
         response.setHeader("lastUrl", (String) request.getSession().getAttribute("lastUrl"));
-        return "index";
+        return "frame";
     }
 
     @GetMapping("/mylove")
@@ -48,20 +52,18 @@ public class BackControl {
         return "mylove";
     }
 
-    @RequestMapping("/index1")
+    @RequestMapping("/index")
     public String index(){
-        return "index1";
+        return "index";
     }
 
-
-
-    @GetMapping("/mystory")
-    public String mystory(HttpServletRequest request){
-        request.getSession().removeAttribute("lastUrl");
-        return "mystory";
-    }
 
     @GetMapping("/login")
+    public String loginRedir(Model model){
+        model.addAttribute("pageEnum", PageEnum.LOGIN.getCode());
+        return "frame";
+    }
+    @GetMapping("/loginVal")
     public String login(){
         return "login";
     }
@@ -93,11 +95,6 @@ public class BackControl {
     public String friendlylink(HttpServletRequest request){
         request.getSession().removeAttribute("lastUrl");
         return "friendlylink";
-    }
-
-    @GetMapping("/ali")
-    public String ali(){
-        return "ali";
     }
 
     @GetMapping("/user")

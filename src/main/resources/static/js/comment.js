@@ -36,4 +36,3 @@ $('#commentBtn').click(function () {
     }
 
 });
-

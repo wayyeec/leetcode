@@ -141,7 +141,7 @@ function register(){
         }
     });
 }
-function mdeditor(){
+/*function mdeditor(){
     $.ajax({
         type:'get',
         url:'/editor',
@@ -153,4 +153,4 @@ function mdeditor(){
         error:function () {
         }
     });
-}
+}*/

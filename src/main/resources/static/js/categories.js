@@ -65,6 +65,9 @@
     });
 
     function ajaxFirst(currentPage,category1) {
+        if(category1===null){
+            category1 = "";
+        }
         $.ajax({
             type:'GET',
             url:'/getCategoryArticle',

@@ -5,84 +5,6 @@
     //网站开始时间
     var siteBeginRunningTime = '2020-07-25 20:00:00';
 
-    // 广告上下滚动
-    function getStyle(obj,name){
-        if(obj.currentStyle)
-        {
-            return obj.currentStyle[name];
-        }
-        else
-        {
-            return getComputedStyle(obj,false)[name];
-        }
-    }
-    function startMove(obj,json,doEnd){
-        clearInterval(obj.timer);
-        obj.timer=setInterval(function(){
-            var oStop=true;
-            for(var attr in json)
-            {
-                var cur=0;
-                if(attr=='opacity')
-                {
-                    cur=Math.round(parseFloat(getStyle(obj,attr))*100);
-                }
-                else
-                {
-                    cur=parseInt(parseInt(getStyle(obj,attr)));
-                }
-                var speed=(json[attr]-cur)/6;
-                speed=speed>0?Math.ceil(speed):Math.floor(speed);
-                if(cur!=json[attr])
-                {
-                    oStop=false;
-                }
-                if(attr=='opacity')
-                {
-                    obj.style.filter='alpha(opacity:'+(speed+cur)+')';
-                    obj.style.opacity=(speed+cur)/100;
-                }
-                else
-                {
-                    obj.style[attr]=speed+cur+'px';
-                }
-            }
-            if(oStop)
-            {
-                clearInterval(obj.timer);
-                if(doEnd) doEnd();
-            }
-        },30);
-    }
-    window.onload=function(){
-        var oDiv=document.getElementsByClassName('roll')[0];
-        var oUl=oDiv.getElementsByTagName('ul')[0];
-        var aLi=oUl.getElementsByTagName('li');
-
-        var now=0;
-        for(var i=0;i<aLi.length;i++)
-        {
-            aLi[i].index=i;
-        }
-
-        function next(){
-            now++;
-            if(now==aLi.length)
-            {
-                now=0;
-            }
-            startMove(oUl,{top:-26*now})
-        }
-        //设置广播滚动时间
-        var timer=setInterval(next,3000);
-        oDiv.onmouseover=function(){
-            clearInterval(timer);
-        };
-        oDiv.onmouseout=function(){
-            timer=setInterval(next,3000);
-        }
-    };
-
     //填充文章
     function putInArticle(data) {
     $('.articles').empty();
@@ -161,34 +83,6 @@
             '</div>'));
     }
 
-    //填充最新留言
-    function putInNewLeaveWord(data) {
-        var newLeaveWord = $('.new-leaveWord');
-        newLeaveWord.empty();
-        var listNews = $('<div data-am-widget="list_news" class="am-list-news am-list-news-default" ></div>');
-        var newCommentTitle = $('<div class="am-list-news-hd am-cf">' +
-            '<a class="newLeaveWord">' +
-            '<h2 style="color: #110101">最新留言</h2>' +
-            '</a>' +
-            '</div>');
-        listNews.append(newCommentTitle);
-        var amListNewsBd = $('<div class="am-list-news-bd"></div>');
-        var ul = $('<ul class="fiveNewComments am-list"></ul>');
-        $.each(data['result'], function (index, obj) {
-            ul.append($('<li class="am-g am-list-item-dated">' +
-                '<a class="newLeaveWordTitle" href="/' + obj['pagePath'] + '" title="' + obj['leaveWordContent'] + '">' + obj['answerer'] + '：' + obj['leaveWordContent'] + '</a>\n' +
-                '<span class="am-list-date">' + obj['leaveWordDate'] + '</span>' +
-                '</li>'));
-        });
-        amListNewsBd.append(ul);
-        listNews.append(amListNewsBd);
-        newLeaveWord.append(listNews);
-        newLeaveWord.append($('<div class="my-row" id="page-father">' +
-            '<div class="newLeaveWordPagination">' +
-            '</div>' +
-            '</div>'));
-    }
-
     //添加标签云
     function putInTagsCloud(data){
         var tagCloud = $('.tag-cloud');
@@ -209,7 +103,7 @@
         url: '/myArticles',
         dataType: 'json',
         data: {
-            rows:"10",
+            rows:"5",
             pageNum:currentPage
         },
         success: function (data) {
@@ -265,37 +159,7 @@
         }
     });
 }
-    function newLeaveWordAjax(currentPage) {
-        //最新留言
-        $.ajax({
-            type: 'GET',
-            url: '/newLeaveWord',
-            dataType: 'json',
-            data: {
-                rows:"5",
-                pageNum:currentPage
-            },
-            success: function (data) {
-                putInNewLeaveWord(data);
 
-                //分页
-                $(".newLeaveWordPagination").paging({
-                    rows:data['pageInfo']['pageSize'],//每页显示条数
-                    pageNum:data['pageInfo']['pageNum'],//当前所在页码
-                    pages:data['pageInfo']['pages'],//总页数
-                    total:data['pageInfo']['total'],//总记录数
-                    flag:0,
-                    callback:function(currentPage){
-                        newLeaveWordAjax(currentPage);
-                    }
-                });
-
-            },
-            error: function () {
-                alert("获得最新留言信息失败！");
-            }
-        });
-    }
 
     //点击扫描二维码时获取二维码图片
     $('.myCardBtn').click(function () {
@@ -306,7 +170,6 @@
     ajaxFirst(1);
 
     newCommentAjax(1);
-    newLeaveWordAjax(1);
 
     //标签云
     $.ajax({

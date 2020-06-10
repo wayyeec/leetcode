@@ -82,6 +82,9 @@
     });
 
     function ajaxFirst(currentPage,archive1) {
+        if(archive1===null){
+            archive1 = "";
+        }
         $.ajax({
             type:'GET',
             url:'/getArchiveArticle',

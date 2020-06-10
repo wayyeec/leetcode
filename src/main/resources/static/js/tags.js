@@ -30,7 +30,7 @@
             '<h1 class="title  am-animation-slide-top"># '+ data['tag'] + '</h1>' +
             '</div>'));
         $.each(data['result'],function (index,obj) {
-            
+
             var timelineRowMajor = $('<div class="timeline-row-major"></div>');
             timelineRowMajor.append($('<span class="node am-animation-slide-top am-animation-delay-1"></span>'));
             var content = $('<div class="content am-comment-main am-animation-slide-top am-animation-delay-1"></div>');
@@ -84,7 +84,9 @@
 
     //加载tags页时请求
     function ajaxFirst(currentPage) {
-
+        if(tag===null){
+            tag="";
+        }
         $.ajax({
             type:'post',
             url:'/getTagArticle',

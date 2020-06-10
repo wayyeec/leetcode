@@ -21,55 +21,6 @@
     <script src="https://cdn.bootcss.com/underscore.js/1.9.1/underscore-min.js"></script>
 </head>
 <body>
-
-<div class="header">
-    <div class="am-topbar" style="margin-bottom: 0">
-        <h1 class="am-topbar-brand">
-            <a href="/" class="blogTitleName"><img src="/img/mine/timo.jpg" class="imgStyle">程序猿</a>
-        </h1>
-        <button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" style="background-color: #CCCCCC;border-color: white;border-radius: 6px" data-am-collapse="{target: '#doc-topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
-
-        <div class="am-collapse am-topbar-collapse" id="doc-topbar-collapse">
-            <ul class="am-nav am-nav-pills am-topbar-nav">
-                <li><a class="top_bar" href="/" style="cursor: pointer;"><span class="fa fa-home"></span>&nbsp;首页</a></li>
-                <li><a class="top_bar" href="/categories" style="cursor: pointer;"><span class="fa fa-th"></span>&nbsp;分类</a></li>
-                <li><a class="top_bar" href="/archives" style="cursor: pointer;"><span class="fa fa-archive"></span>&nbsp;归档</a></li>
-                <li><a class="top_bar" href="/tags" style="cursor: pointer;"><span class="fa fa-tags"></span>&nbsp;标签</a></li>
-                <li><a class="top_bar" href="/update" style="cursor: pointer;"><span class="fa fa-calendar-plus-o"></span>&nbsp;更新</a></li>
-                <li><a class="top_bar" href="/friendlylink" style="cursor: pointer;"><span class="fa fa-street-view"></span>&nbsp;友链</a></li>
-                <li><a class="top_bar" href="/aboutme" style="cursor: pointer;"><span class="fa fa-user"></span>&nbsp;关于我</a> </li>
-            </ul>
-
-            <div class="am-topbar-right" th:if="${#httpServletRequest.remoteUser}">
-                <div class="am-dropdown" data-am-dropdown="{boundary: '.am-topbar'}">
-                    <button class="personalSpace am-btn am-btn-secondary am-topbar-btn am-btn-sm am-dropdown-toggle" data-am-dropdown-toggle><span sec:authentication="name"></span> <span class="am-icon-caret-down"></span></button>
-                    <ul class="am-dropdown-content">
-                        <li><a href="/user" sec:authorize="hasRole('ROLE_USER')">个人主页</a></li>
-                        <li><a href="/superadmin" sec:authorize="hasRole('ROLE_SUPERADMIN')">网站后台管理</a></li>
-
-                        <li><a class="feedbackClick">反馈</a></li>
-                        <hr style="margin: 10px 0 5px 0;">
-                        <li><a th:href="@{/logout}">退出登录</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="am-topbar-right" th:unless="${#httpServletRequest.remoteUser}">
-                <a href="/register" class="am-btn am-btn-primary am-topbar-btn am-btn-sm" style="color: white">注册</a>
-            </div>
-            <div class="am-topbar-right" th:unless="${#httpServletRequest.remoteUser}">
-                <a href="/login" class="loginBtn am-btn am-btn-primary am-topbar-btn am-btn-sm" style="color: white">登录</a>
-            </div>
-            <div class="am-topbar-right writing am-hide-md-down">
-                <a  href="/editor" target="_blank" style="text-decoration: none">
-                    <img class="am-circle" src="/img/common/writing.jpg">
-                    <span class="write-word">写博客</span>
-                </a>
-            </div>
-
-        </div>
-    </div>
-</div>
-
 <div class="am-cf admin-main" style="padding-top: 0">
 
     <!--左侧-->
@@ -86,9 +37,9 @@
                     </ul>
                 </li>
                 <li class="superAdminClick friendLink"><a><span class="am-icon-users"></span> 友链管理</a></li>
-                <li class="superAdminClick userFeedback"><a><span class="am-icon-table"></span> 反馈</a></li>
+                <!--<li class="superAdminClick userFeedback"><a><span class="am-icon-table"></span> 反馈</a></li>
                 <li class="superAdminClick privateWord" style="width: 100%"><a><span class="am-icon-pencil-square-o"></span> 悄悄话</a></li>
-            </ul>
+            </ul>-->
 
             <div class="am-panel am-panel-default admin-sidebar-panel">
                 <div class="am-panel-bd">
